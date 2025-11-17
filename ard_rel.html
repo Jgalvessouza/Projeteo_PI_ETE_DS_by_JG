@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aprofundar em Arduino e Placas de Relés</title>
+  <link rel="shortcut icon" href="img/favicom.ico" type="image/x-icon">
+  <style>
+    :root {
+      --bg:#1e1e1e; --card:#353535; --accent:#27dbd8; --text:#e26222;
+      --muted:#999; --radius:12px; --shadow:0 6px 18px rgba(0,0,0,0.4);
+    }
+    *{ box-sizing:border-box; }
+    body{ margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI", Arial, sans-serif; }
+    header{
+      background-image:url('img/reader.png');
+      background-size:cover; background-position:center;
+      padding:30px 10px; text-align:center; color:var(--accent);
+      box-shadow:var(--shadow);
+    }
+    header h1{ margin:0; font-size:2rem; }
+    main{
+      max-width:1200px; margin:20px auto; padding:20px;
+      display:grid; grid-template-columns:2fr 1fr; gap:20px;
+    }
+    @media(max-width:900px){ main{ grid-template-columns:1fr; } }
+    .card{
+      background:var(--card); padding:20px; border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    h2{ color:var(--accent); margin-top:0; }
+    .highlight{
+      background:#4b9e72; color:#fff; border-left:5px solid var(--accent);
+      padding:10px; border-radius:8px; margin:10px 0;
+    }
+    table{ width:100%; border-collapse:collapse; margin:10px 0; }
+    th,td{ border:1px solid #666; padding:8px; }
+    th{ background:#4b9e72; color:#fff; }
+    .safety{
+      background:#3b1f1f; color:#ffb8b8;
+      padding:10px; border-left:5px solid #ff4d4f;
+      border-radius:8px; margin-top:10px;
+    }
+    footer{ text-align:center; color:var(--muted); padding:20px; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Aprofundar em Arduino e Placas de Relés</h1>
+    <p>Entendendo comunicação, acionamento e automação eletroeletrônica</p>
+  </header>
+
+  <main>
+    <article class="card">
+      <h2>1. Visão Geral do Arduino</h2>
+      <p>
+        O <strong>Arduino</strong> é um microcontrolador capaz de interpretar sinais digitais e analógicos,
+        controlar periféricos, ler sensores e acionar dispositivos externos. Sua facilidade de programação
+        e integração o torna ideal para automação e prototipagem.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Recurso</th>
+            <th>Função</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pinos Digitais</td>
+            <td>Envio de sinais ON/OFF para relés, LEDs e módulos.</td>
+          </tr>
+          <tr>
+            <td>Pinos Analógicos</td>
+            <td>Leitura de sensores como temperatura, luz e potenciômetros.</td>
+          </tr>
+          <tr>
+            <td>Comunicação Serial</td>
+            <td>Troca de dados com o computador ou outros dispositivos.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="highlight">
+        💡 <strong>Importante:</strong> O Arduino trabalha com 5V e baixa corrente. Por isso,
+        não pode acionar cargas diretamente — entra a placa de relés.
+      </div>
+
+      <h2>2. O Funcionamento de uma Placa de Relés</h2>
+      <p>
+        A <strong>placa de relés</strong> atua como um interruptor eletrônico. Ela permite acionar cargas de
+        alta tensão (110/220V) e alta corrente usando apenas o sinal de baixa potência vindo do Arduino.
+      </p>
+
+      <ul>
+        <li>Isolamento elétrico entre Arduino e carga.</li>
+        <li>Possibilidade de controlar motores, lâmpadas e fontes externas.</li>
+        <li>Entrada de controle compatível com 5V.</li>
+      </ul>
+
+      <h2>3. Exemplo de Conexão</h2>
+      <div class="card" style="background:#2b2b2b; color:#fff;">
+        <pre><code>
+Arduino (5V)  →  VCC do Módulo Relé
+Arduino (GND) →  GND do Módulo Relé
+Pino Digital  →  IN1
+
+IN1 ───► Aciona o relé 1
+Contatos do relé ─► L (fase) / NO / NC
+        </code></pre>
+      </div>
+
+      <h2>4. Aplicações Práticas</h2>
+      <ol>
+        <li>Acionamento de motores de 12V ou 24V.</li>
+        <li>Ligar/desligar lâmpadas ou ventiladores.</li>
+        <li>Automação residencial e protótipos IoT.</li>
+      </ol>
+
+      <div class="safety">
+        ⚠️ <strong>Atenção:</strong> Sempre que trabalhar com 110/220V, utilize EPI e tenha orientação
+        profissional. A placa de relés isola a lógica, mas os contatos ainda são perigosos.
+      </div>
+    </article>
+
+    <aside class="card">
+      <h3>📘 Tópicos de Aprofundamento</h3>
+      <ul>
+        <li>Tipos de relés: 5V, 12V, SSR e contato seco.</li>
+        <li>Proteção contra corrente reversa.</li>
+        <li>Uso de diodos de flyback em cargas indutivas.</li>
+        <li>Automação IoT com Wi-Fi (ESP32/ESP8266).</li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer>
+    Material didático — Curso Técnico de Desenvolvimento de Sistemas — JG
+  </footer>
+</body>
+
+</html>

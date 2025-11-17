@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Revisão – Aplicação de Python e IoT em Robótica</title>
+  <link rel="shortcut icon" href="img/favicom.ico" type="image/x-icon">
+  <style>
+    :root {
+      --bg: #353535;
+      --card: #353535;
+      --accent: #27dbd8;
+      --muted: #6b7280;
+      --radius: 12px;
+      --container: 1100px;
+      --container_h: 800px;
+      --shadow: 0 6px 18px rgba(8, 18, 51, 0.06);
+      --text: #e26222;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Inter, Arial, sans-serif;
+      background: #1e1e1e;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background-image: url('img/reader.png');
+      background-size: cover;
+      /* cobre toda a tela */
+      background-repeat: no-repeat;
+      /* não repete a imagem */
+      background-position: center;
+      color: #27dbd8;
+      text-align: center;
+      padding: 25px 10px;
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.8rem
+    }
+
+    h2 {
+      color: var(--accent)
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px
+    }
+
+    @media (max-width:900px) {
+      main {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    .highlight {
+      background: #4b9e72;
+      color: #f2f5f5;
+      border-left: 5px solid var(--accent);
+      padding: 10px;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px
+    }
+
+    th,
+    td {
+      padding: 8px;
+      border: 1px solid #dfe5ec;
+      text-align: left
+    }
+
+    th {
+      background: #4b9e72;
+      color: var(--accent)
+    }
+
+    ul {
+      margin: 0 0 10px 20px
+    }
+
+    ol {
+      margin: 0 0 10px 25px
+    }
+
+    .safety {
+      background: #fff6f6;
+      border-left: 5px solid #ff4d4f;
+      padding: 10px;
+      border-radius: 8px;
+      color: #5c2525;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      margin: 20px 0;
+      font-size: 0.9rem
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Projeto Integrador Sucatinha</h1>
+    <p>Revisão de Conceitos – Python e Internet das Coisas (IoT)</p>
+  </header>
+
+  <main>
+    <article class="card">
+      <h2>1. Python no Contexto da Robótica Sustentável</h2>
+      <p>A aplicação principal para o controle do robô **Sucatinha** foi desenvolvida em **Python**. Esta linguagem foi
+        escolhida por ser amplamente aplicada em IoT devido à sua **simplicidade e poder de integração**.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Componente Lógico</th>
+            <th>Função Principal</th>
+            <th>Mecanismo de Integração</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Placa-Mãe Reciclada</strong></td>
+            <td>Unidade principal, responsável pela parte lógica e controle geral do sistema.</td>
+            <td>Executa a aplicação em Python (rodando Windows 10 Lite).</td>
+          </tr>
+          <tr>
+            <td><strong>Aplicação Python</strong></td>
+            <td>Gera e envia comandos para a movimentação do robô.</td>
+            <td>Comunicação serial para o Arduino[cite: 6, 29.</td>
+          </tr>
+          <tr>
+            <td><strong>Arduino UNO</strong></td>
+            <td>Controla diretamente os motores, recebendo comandos lógicos.</td>
+            <td>Acionamento dos motores via placa de relés.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="highlight">
+        💡 <strong>Sistema Híbrido:</strong> O robô opera com um sistema híbrido robusto e eficiente, formado pela
+        **placa-mãe reciclada** (lógica avançada) e pelo **Arduino** (controle de hardware de baixa camada).
+      </div>
+
+      <h2>2. Implementação do Módulo IoT</h2>
+      <p>O conceito de Internet das Coisas (IoT) no projeto permite a interação remota com o robô.</p>
+
+      <h3>💻 Estratégia de Conectividade:</h3>
+      <ul>
+        <li>O **módulo IoT** foi implementado utilizando **espelhamento de tela**.</li>
+        <li>Essa técnica permitiu o **acesso remoto via rede** ao sistema[cite: 30].</li>
+        <li>O objetivo é demonstrar a **viabilidade** do uso de sucata tecnológica como ferramenta educacional em áreas
+          estratégicas como IoT.</li>
+      </ul>
+
+      <h2>3. Desafios e Futuro da Integração</h2>
+      <p>O projeto demonstrou um excelente desempenho, respondendo com precisão aos comandos enviados via Python e
+        Arduino. Para o futuro, estão previstas melhorias para aprimorar a integração IoT e a autonomia do robô:</p>
+      <ol>
+        <li>Implementação do **controle via Wi-Fi**.</li>
+        <li>Adição de **sensores inteligentes**.</li>
+        <li>Inclusão de **visão computacional**.</li>
+      </ol>
+
+      <h2>💬 Conclusão</h2>
+      <ul>
+        <li>Python é a ponte que conecta a lógica de alto nível (Placa-Mãe) com a eletrônica (Arduino/Motores).</li>
+        <li>O **lixo eletrônico** pode ser convertido em aprendizado prático de **robótica e IoT**.</li>
+        <li>O projeto reforça a importância da **sustentabilidade tecnológica** no ensino técnico.</li>
+      </ul>
+    </article>
+
+    <aside class="card">
+
+
+      <h3>📚 Tópicos de Aprofundamento</h3>
+      <ul>
+        <li>Comunicação Serial (Python/Arduino)</li>
+        <li>Revisão de Bibliotecas Python para Interface Gráfica (Tkinter) e GPIO</li>
+        <li>Protocolos de Rede e Controle Remoto</li>
+        <li>Futuro: Integração de APIs de Visão Computacional</li>
+      </ul>
+
+      <div class="safety">
+        ⚠️ <strong>Relembrando:</strong> Toda a lógica de software (Python) depende de uma comunicação serial estável e
+        de um controle de hardware (Arduino/Relés) dimensionado corretamente para a alta corrente dos motores.
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    Material didático – Curso de Manutenção de Micros • Baseado no Projeto Integrador Sucatinha
+  </footer>
+</body>
+
+</html>

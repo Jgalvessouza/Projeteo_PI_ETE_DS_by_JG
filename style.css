@@ -1,0 +1,255 @@
+:root {
+    --bg: #1e1e1e; /* Fundo dark mode, baseado no body */
+    --card: #353535; /* Fundo dos cards e carrossel */
+    --accent: #27dbd8; /* Ciano Neon (Acento Principal) */
+    --muted: #6b7280;
+    --radius: 12px;
+    --container: 1100px;
+    --container_h: 800px;
+    --text-primary: #f0f0f0; /* Cor do texto no dark mode */
+    --text-code: #e26222; /* Cor de destaque (Laranja/Coral) */
+    --shadow: 0 6px 18px rgba(8, 18, 51, 0.06);
+}
+
+/* Reset básico e box-sizing */
+* {
+    box-sizing: border-box
+}
+
+/* Estilo do corpo (Dark Mode) */
+body {
+    margin: 0;
+    font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+}
+
+/* Contêiner Genérico (para Topbar e Footer) */
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 30px
+}
+
+/* Estilo Topbar (com Imagem de Fundo e Sombra Neon) */
+.topbar {
+    background-image: url('img/reader.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: var(--accent); /* Título em neon */
+    padding: 5px 0;
+    margin-bottom: 10px;
+    text-align: center;
+    box-shadow: 0px 3px 10px 1px var(--accent); /* Sombra neon */
+}
+
+.topbar p {
+    color: var(--text-code); /* Subtítulo em coral */
+}
+
+.subtitle {
+    opacity: 0.95;
+    margin: 0
+}
+
+/* --- SEÇÃO PRINCIPAL (MAIN) CORRIGIDA --- */
+main.container {
+    /* Aumenta a largura máxima para 1400px, conforme solicitado antes */
+    max-width: 1400px; 
+    margin: 20px auto;
+    padding: 20px;
+    display: grid;
+    
+    /* CORREÇÃO: Manteve o layout de duas colunas (carrossel + sidebar) */
+    grid-template-columns: 2fr 1fr;
+    
+    /* Configurações de espaçamento final */
+    gap: 18px;
+    margin-bottom: 48px;
+    margin-top: 38px;
+}
+
+/* Media Query para telas pequenas (quebra para coluna única) */
+@media (max-width:920px) {
+    main.container {
+        grid-template-columns: 1fr
+    }
+}
+
+/* --- CARD (Sidebar) --- */
+.card {
+    margin-left: 10vh; /* Mantido o espaçamento lateral */
+    color: var(--accent); /* Títulos do card em neon */
+    background: var(--card);
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px 1px var(--accent); /* Sombra neon */
+}
+
+/* Links do Card (Tópicos de Aprofundamento) */
+.card li a {
+    color: var(--text-code); /* Links em coral */
+    text-decoration: none;
+    font-size: large;
+    font-family: Consolas, "Courier New", monospace;
+}
+.card strong{
+    color: #9e019e;
+}
+/* --- CARROSSEL CORRIGIDO --- */
+.carousel {
+    font-size: large;
+    font-family: Consolas, "Courier New", monospace;
+    position: relative;
+    background: linear-gradient(180deg, #353535, #1e1f22);
+    box-shadow: 0px 3px 10px 1px var(--accent); /* Sombra neon */
+    
+    /* Propriedades de layout do PARENT (main.container) foram removidas daqui:
+       max-height: 1900px;, margin: 20px auto;, grid-template-columns: 1fr;, gap: 20px;
+       O carrossel agora usa a largura 100% da sua célula (2fr) do grid.
+    */
+    padding: 20px;
+}
+
+/* --- Estilos do Modo Tela Cheia --- */
+#fullscreen-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+    box-shadow: inset 0px 0px 30px 5px #27dbd8;
+}
+
+.carousel.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 30px !important;
+    border-radius: 0;
+    box-shadow: none !important;
+    z-index: 9999;
+    overflow-y: auto;
+    
+}
+
+.carousel.fullscreen .slide img {
+    background-color: #6b7280;
+    padding-top: 5vh;
+    max-height: 50vh;
+    width: auto !important;
+    border-radius: 20px;
+    box-shadow:0px 0px 20px 5px #27dbd8;
+}
+
+.carousel.fullscreen #fullscreen-toggle::before {
+    content: '\26F7';
+    
+}
+
+/* --- Slides e Conteúdo --- */
+.slides {
+    min-height: 260px
+}
+
+.slide {
+    display: none;
+    padding: 18px;
+    border-radius: 8px;
+    text-align: center
+}
+
+.slide[aria-hidden="false"] {
+    display: block
+}
+
+.slide h2 {
+    margin-top: 0;
+    color: var(--accent) /* Títulos em neon */
+}
+
+.slide p {
+    color: var(--text-code); /* Conteúdo em coral */
+    line-height: 1.5
+}
+.slide strong{
+    color: #6a9955;
+}
+.slide img {
+    width: 380px;
+    height: auto;
+    max-width: 80%;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 12px
+}
+
+/* --- Navegação e Dots --- */
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--accent);
+    color: #C46638;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 6px 14px rgba(19, 103, 201, 0.25);
+}
+
+.prev {
+    left: 12px
+}
+
+.next {
+    right: 12px
+}
+
+.dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 12px
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #d6e6ff;
+    cursor: pointer;
+    border: 2px solid transparent
+}
+
+.dot.active {
+    background: var(--accent);
+    border-color: rgba(0, 0, 0, 0.06)
+}
+
+/* --- Footer --- */
+footer.topbar {
+    margin-top: 12px;
+    padding: 12px 0
+}
+
+footer small {
+    opacity: 0.95;
+    color: var(--accent);
+}

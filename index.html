@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto Integrador – Sucata na Educação Robótica e IoT</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="img/favicom.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="container">
+            <h1>Projeto Integrador – Sucata na Educação Robótica e IoT</h1>
+            <p class="subtitle">Relato do Robô Sucatinha e Oficina Prática</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="carousel">
+            <button class="nav prev" aria-label="Slide anterior">&#10094;</button>
+            <button id="fullscreen-toggle" aria-label="Tela Cheia" title="Tela Cheia">
+                &#x26F6; </button>
+            <div class="slides" id="slides">
+                <article class="slide" data-index="0" aria-hidden="false">
+                    <h2>O Projeto Sucatinha: Robótica e Sustentabilidade</h2>
+                    <img src="img/suct_aber.png" alt="Robô Sucatinha montado" style="width: 480px;">
+                    
+                    <p>
+                        Este trabalho apresenta o desenvolvimento do <strong>robô Sucatinha</strong>, construído
+                        integralmente com <strong>peças reaproveitadas</strong> de impressoras, notebooks e motores
+                        automotivos. <br>O projeto demonstra a viabilidade do lixo eletrônico como <strong>ferramenta
+                            educacional</strong>.
+                    </p>
+                </article>
+
+                <article class="slide" data-index="1" aria-hidden="false">
+                    <h2>Hardware: Componentes de Sucata</h2>
+                    <img src="img/imagen_01.png" alt="Placa mãe e motores de sucata" style="width: 480px;">
+                    
+                    <p>
+                        A base do robô foi construída a partir da <strong>
+                            carcaça metálica de uma
+                            fotocopiadora
+                        </strong>. A propulsão utiliza <strong>
+                            motores de vidro elétrico
+                            automotivos
+                        </strong>, e a alimentação vem de <strong>baterias reaproveitadas</strong> de
+                        notebook e sucata.
+                    </p>
+                </article>
+                <article class="slide" data-index="2" aria-hidden="false">
+                    <h2>Base Lógica: Placa-Mãe Reciclada</h2>
+                    <img src="img/sucatas_pecas.png" alt="Placa-mãe de tablet governamental" style="width: 480px;">
+                    
+                    <p>
+                        A estrutura utiliza uma <strong>placa-mãe reciclada</strong> de table governamental (4 GB RAM, 80
+                        GB SSD, Windows 10 Lite) como unidade principal.Essa placa é
+                        responsável pela parte lógica e pelo controle geral do sistema.
+                    </p>
+                </article>
+                <article class="slide" data-index="3" aria-hidden="false">
+                    <h2>Controle de Motores: Arduino e Relés</h2>
+                    <img src="img/motores.png" alt="Diagrama de Arduino e relés" style="width: 480px;">
+                    
+                    <p>
+                        Um <strong>Arduino UNO</strong> é responsável pelo controle dos motores. Devido à alta corrente requerida
+                        pelos motores automotivos, o Arduino é conectado a uma <strong>placa de relés</strong> para o acionamento
+                        seguro.
+                    </p>
+                </article>
+
+
+                <article class="slide" data-index="4" aria-hidden="false">
+                    <h2>O Software de Controle em Python</h2>
+                    <img src="img/python.png" alt="Trecho de código Python" style="width: 480px;">
+                    
+                    <p>
+                        A aplicação principal foi desenvolvida em <strong>Python</strong>. Este
+                        programa envia comandos de movimentação para o Arduino via <stongo>comunicação serial</stongo>, integrando o hardware e o software de maneira eficiente.
+                    </p>
+                </article>
+                <article class="slide" data-index="5" aria-hidden="false">
+                    <h2>Integração IoT (Internet das Coisas)</h2>
+                    <img src="img/telas.png" alt="Tela de espelhamento remoto" style="width: 480px;">
+                    
+                    <p>O sistema conta com um **módulo IoT** baseado em espelhamento de tela com programas para manutenção remota.
+                        Isso permite a <strong>interação e o controle remoto</strong> do robô Sucatinha via rede,
+                        explorando conceitos de Internet das Coisas.</p>
+                </article>
+
+                <article class="slide" data-index="6" aria-hidden="true">
+                    <h2>Robótica Sustentável e Educação</h2>
+                    <img src="img/lixo.png" alt="Ilustração de educação ambiental e robótica"
+                        style="width: 380px;">
+                    
+                    <p>O projeto tem forte caráter ambiental, convertendo o lixo eletrônico em aprendizado
+                        prático. <br> A <strong>sustentabilidade tecnológica</strong> reforça a importância do
+                        reaproveitamento como prática educativa no ensino técnico.</p>
+                </article>
+
+                <article class="slide" data-index="7" aria-hidden="true">
+                    <h2>Oficina Prática: Relato da Experiência</h2>
+                    <img src="img/ofcina.png" alt="Foto da oficina prática com alunos" style="width: 580px;">
+                    
+                    <p>Uma oficina prática foi realizada com sucesso, onde os alunos
+                        aprenderam a reutilizar componentes de sucata (drives de DVD, baterias, etc.)
+                        para montar <strong>mini robôs e pequenos circuitos funcionais</strong>.</p>
+                </article>
+
+                <article class="slide" data-index="8" aria-hidden="true">
+                    <h2>Aprendizados da Oficina</h2>
+                    <img src="img/reso.png" alt="Desenvolvimento de habilidades" style="width: 480px;">
+                    
+                    <p>A prática com sucata estimulou o desenvolvimento de habilidades como
+                        <strong>improvisação</strong>, <strong>trabalho em equipe</strong> e <strong>resolução de problemas</strong>.
+                        Reforçou conceitos de polaridade, ligações elétricas e montagem estrutural.</p>
+                </article>
+
+                <article class="slide" data-index="9" aria-hidden="true">
+                    <h2>Conclusões e Futuras Melhorias</h2>
+                    <img src="img/conclusao.png" alt="Tecnologias futuras" style="width: 480px;">
+                    
+                    <p>O robô demonstrou excelente desempenho, validando a robótica
+                        sustentávelAs futuras melhorias propostas incluem controle via
+                        **Wi-Fi**, integração de **sensores inteligentes** e uso de **visão computacional**.
+                    </p>
+                </article>
+            </div>
+            <button class="nav next" aria-label="Próximo slide">&#10095;</button>
+            <div class="dots" id="dots"></div>
+        </section>
+
+        <section class="card">
+            <h3>Tópicos de Aprofundamento</h3>
+            <ul>
+                <li><a href="py_iot.html"><strong>Revisar</strong> a aplicação de Python em IoT.</a></li>
+                <li><a href="ard_rel.html"><strong>Aprofundar</strong> em Arduino e Placas de Relés.</a></li>
+                <li><a href="estudar.html"><strong>Estudar</strong> a Sustentabilidade Tecnológica no Ensino.</a></li>
+
+            </ul>
+        </section>
+    </main>
+
+    <footer class="topbar">
+        <div class="container">
+            <small>Material baseado no Projeto Integrador Sucata na Educação Robótica e IoT — JG</small>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
